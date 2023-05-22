@@ -1,7 +1,7 @@
 // Copyright 2012 - 2018 The txt2svg Contributors
 // All rights reserved.
 
-// The a2s tool generates SVG output given an ASCII diagram input.
+// The t2s tool generates SVG output given an txt diagram input.
 package main
 
 import (
@@ -15,17 +15,17 @@ import (
 
 const logo = ` .-------------------------.
  |                         |
- | .---.-. .-----. .-----. |
- | | .-. | +-->  | |  <--+ |
- | | '-' | |  <--+ +-->  | |
- | '---'-' '-----' '-----' |
- |  ascii     2      svg   |
+ |         .-----. .-----. |
+ |         '--'  | |  '--' |
+ |         '  '--' '--'  ' |
+ |  t      '-----' '-----' |
+ |  txt     2      svg   ' |
  |                         |
  '-------------------------'
 
 https://github.com/pippi101
 
-[1,0]: {"fill":"#88d","a2s:delref":1}
+[1,0]: {"fill":"#88d","t2s:delref":1}
 `
 
 func mainImpl() error {
@@ -42,7 +42,7 @@ func mainImpl() error {
 	scaleX := flag.Int("x", 9, "X grid scale in pixels.")
 	scaleY := flag.Int("y", 16, "Y grid scale in pixels.")
 	tabWidth := flag.Int("t", 8, "Tab width.")
-	doLogo := flag.Bool("L", false, "Generate SVG of the a2s logo.")
+	doLogo := flag.Bool("L", false, "Generate SVG of t2s logo.")
 	flag.Parse()
 
 	var input []byte
@@ -74,7 +74,7 @@ func mainImpl() error {
 
 func main() {
 	if err := mainImpl(); err != nil {
-		fmt.Fprintf(os.Stderr, "a2s: %s\n", err)
+		fmt.Fprintf(os.Stderr, "t2s: %s\n", err)
 		os.Exit(1)
 	}
 }

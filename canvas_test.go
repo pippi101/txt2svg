@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/maruel/ut"
+	"github.com/pippi101/ut"
 )
 
 func TestNewCanvas(t *testing.T) {

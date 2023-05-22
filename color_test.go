@@ -6,7 +6,7 @@ package txt2svg
 import (
 	"testing"
 
-	"github.com/maruel/ut"
+	"github.com/pippi101/ut"
 )
 
 func TestParseHexColor(t *testing.T) {
